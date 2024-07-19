@@ -1,0 +1,111 @@
+{
+  "o_id": f"agent-tr-final-{__VERSION__}",
+  "name": "str",
+  "description": "str",
+  "type": "str",
+  "created_at": "pyarrow.datetime",
+  "updated_at": "pyarrow.datetime",
+  "updated_by": "USER.name",
+  "previous_party": "str",
+  "chain_of_custody": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "description": "Chain of custody for the report"
+  },
+  "schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "triage_agent_output",
+    "type": "object",
+    "properties": {
+      "report_id": {
+        "type": "string",
+        "description": "Unique identifier for the intelligence report"
+      },
+      "AOI": {
+        "type": "boolean",
+        "description": "Area of interest"
+      },
+      "IOC": {
+        "type": "boolean",
+        "description": "Indicator of compromise present"
+      },
+      "CVSS": {
+        "type": "number",
+        "format": "float",
+        "minimum": 0.0,
+        "maximum": 10.0,
+        "description": "Common Vulnerability Scoring System score"
+      },
+      "APT": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Advanced Persistent Threat groups involved"
+      },
+      "Confidence": {
+        "type": "object",
+        "properties": {
+          "p_value": {
+            "type": "number",
+            "format": "float",
+            "minimum": 0.0,
+            "maximum": 100.0
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "description": "Confidence level of the report's findings"
+      },
+      "mitre_id": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "MITRE ATT&CK technique IDs"
+      },
+      "LLM_Approved": {
+        "type": "boolean",
+        "description": "Approval status by a large language model or automated system"
+      },
+      "distribution": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Distribution list for the report"
+      },
+      "content": {
+        "type": "object",
+        "description": "Detailed content of the report",
+        "properties": {
+          "summary": {
+            "type": "string",
+            "description": "Brief summary of the threat"
+          },
+          "detailed_description": {
+            "type": "string",
+            "description": "Detailed description of the threat and activities observed"
+          },
+          "indicators_of_compromise": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of indicators of compromise"
+          },
+          "recommended_actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Recommended actions to mitigate the threat"
+          }
+        }
+      }
+    }
+  }
+}

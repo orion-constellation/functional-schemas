@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "orion-data"
+version = "0.1.0"
+description = "Version controlled schemas to manage schemas and other standardized data"
+authors = ["orionhunts-ai <orion@oriondefensiveai.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+jsonschema = "^4.23.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

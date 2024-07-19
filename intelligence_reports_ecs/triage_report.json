@@ -1,0 +1,81 @@
+{
+    "report_id": {
+      "type": "string",
+      "description": "Unique identifier for the intelligence report"
+    },
+    "AOI": {
+      "type": "boolean",
+      "description": "Area of interest"
+    },
+    "IOC": {
+      "type": "boolean",
+      "description": "Indicator of compromise present"
+    },
+    "CVSS": {
+      "type": "number",
+      "format": "float",
+      "minimum": 0.0,
+      "maximum": 10.0,
+      "description": "Common Vulnerability Scoring System score"
+    },
+    "APT": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Advanced Persistent Threat groups involved"
+    },
+    "Confidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Confidence level of the report's findings"
+    },
+    "mitre_id": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "MITRE ATT&CK technique IDs"
+    },
+    "LLM_Approved": {
+      "type": "boolean",
+      "description": "Approval status by a large language model or automated system"
+    },
+    "distribution": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Distribution list for the report"
+    },
+    "content": {
+      "type": "object",
+      "description": "Detailed content of the report",
+      "properties": {
+        "summary": {
+          "type": "string",
+          "description": "Brief summary of the threat"
+        },
+        "detailed_description": {
+          "type": "string",
+          "description": "Detailed description of the threat and activities observed"
+        },
+        "indicators_of_compromise": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of indicators of compromise"
+        },
+        "recommended_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Recommended actions to mitigate the threat"
+        }
+      }
+    }
+  }
