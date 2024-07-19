@@ -1,15 +1,21 @@
 [tool.poetry]
-name = "orion-data"
+name = "generate-tests"
 version = "0.1.0"
-description = "Version controlled schemas to manage schemas and other standardized data"
+description = "Generates tests for utils"
 authors = ["orionhunts-ai <orion@oriondefensiveai.com>"]
 license = "Apache-2.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-jsonschema = "^4.23.0"
-pydantic = "^2.8.2"
+openai = "^1.35.14"
+anthropic = "^0.31.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+black = "^24.4.2"
+flake8 = "^1.0.0"
+isort = "^1.0.0"
 
 
 [build-system]
